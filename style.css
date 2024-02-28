@@ -10,6 +10,8 @@
   --blue-100: #293241;
   --orange-100: #f67669;
   --gray-100: #bfd7e4;
+  --gray-200: #e6e6f0;
+  --gray-300: #fafafc;
   --white: #ffffff;
 
   font-size: 62.5%;
@@ -19,4 +21,71 @@
   --font-20: 2rem;
   --font-14: 1.4rem;
   --font-16: 1.6rem;
+}
+body {
+  background-color: var(--gray-100);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  color: var(--white);
+  text-align: center;
+}
+
+header h1 {
+  font-size: var(--font-36);
+  font-family: "Staatliches", sans-serif;
+  margin-top: 2rem;
+}
+
+header p {
+  font-size: var(--font-16);
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 2rem;
+}
+
+main form {
+  background-color: var(--white);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+  padding: 6.4rem;
+  margin-top: 3.2rem;
+  max-width: 75rem;
+}
+main form fieldset {
+  border: none;
+}
+
+.fieldset__wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+main form fieldset hr {
+  border-color: var(--gray-100);
+}
+
+main form fieldset legend {
+  font-size: var(--font-24);
+  font-family: "Staatliches", sans-serif;
+}
+main form fieldset label {
+  font-size: var(--font-14);
+  font-family: "Poppins", sans-serif;
+}
+
+main fieldset input, select, textarea {
+  background-color: var(--gray-300);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  height: 5.5rem;
+}
+main fieldset textarea{
+    height: 16rem;
 }
