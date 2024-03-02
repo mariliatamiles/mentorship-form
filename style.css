@@ -22,49 +22,98 @@
   --font-14: 1.4rem;
   --font-16: 1.6rem;
 }
+body::before {
+  content: "";
+  width: 100%;
+  height: 46.5rem;
+  background: var(--blue-100);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
 body {
   background-color: var(--gray-100);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 header {
-  color: var(--white);
-  text-align: center;
+  padding-top: 5rem;
 }
 
 header h1 {
   font-size: var(--font-36);
   font-family: "Staatliches", sans-serif;
-  margin-top: 2rem;
+  line-height: 4.2rem;
+  margin-bottom: 2.4rem;
 }
 
 header p {
   font-size: var(--font-16);
   font-family: "Poppins", sans-serif;
-  margin-bottom: 2rem;
+  line-height: 2.6rem;
+  margin-bottom: 2.4rem;
+}
+
+header img {
+  margin-bottom: 3.1rem;
+}
+
+header,
+header h1,
+p {
+  color: var(--white);
+  text-align: center;
+}
+main {
+  max-width: 75rem;
+  margin: auto;
 }
 
 main form {
   background-color: var(--white);
   border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 3.6rem;
-  padding: 6.4rem;
-  margin-top: 3.2rem;
-  max-width: 75rem;
+  overflow: hidden;
 }
 main form fieldset {
   border: none;
 }
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 13.3rem;
+  background-color: var(--orange-100);
+  color: var(--white);
+}
+.fieldset__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 3.1rem;
+}
 
-.fieldset__wrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
+.fieldset__wrapper legend {
+  text-align: center;
+}
+
+.col__2 {
+  display: flex;
+  gap: 2rem;
+}
+
+.input__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input__container label {
+  margin-bottom: 1.6rem;
+}
+
+.input__container__spacing {
+  width: 100%;
 }
 
 main form fieldset hr {
@@ -80,31 +129,82 @@ main form fieldset label {
   font-family: "Poppins", sans-serif;
 }
 
-main fieldset input, select, textarea {
+main fieldset input,
+select,
+textarea {
   background-color: var(--gray-300);
   border: 1px solid var(--gray-200);
   border-radius: 8px;
   height: 5.5rem;
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
 }
-main fieldset textarea{
-    height: 16rem;
+main fieldset select {
+  width: 50%;
+}
+main fieldset textarea {
+  height: 16rem;
 }
 
-@media(max-width:600px){
-  body{
+.input__checkbox__container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.col__3 {
+  display: flex;
+  gap: 2rem;
+}
+
+.col__3 > :nth-child(1) {
+  width: 50%;
+}
+.col__3 > :nth-child(2) {
+  width: 25%;
+}
+.col__3 > :nth-child(3) {
+  width: 25%;
+}
+
+.col__3 span {
+  font-size: 10px;
+  color: var(--gray-100);
+}
+
+button {
+  color: var(--white);
+  background-color: var(--orange-100);
+  border: none;
+  border-radius: 8px;
+  font-family: "Staatliches", sans-serif;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  text-transform: uppercase;
+  padding-block: 1rem;
+  cursor: pointer;
+}
+
+.btn__save {
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .col__2 {
     display: flex;
     flex-direction: column;
-    align-items: center;
   }
-  form fieldset{
+  .col__3 {
     display: flex;
     flex-direction: column;
-    gap: 1.6rem;
   }
-
-  .title{
-    margin-bottom: 2.4rem;
+  .col__3 > :nth-child(1) {
+    width: 100%;
   }
-
-  
+  .col__3 > :nth-child(2) {
+    width: 100%;
+  }
+  .col__3 > :nth-child(3) {
+    width: 100%;
+  }
 }
